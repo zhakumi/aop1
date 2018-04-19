@@ -12,7 +12,7 @@ public class LogXml {
     public static void main(String[] args) {
         ApplicationContext ctx =
                 new ClassPathXmlApplicationContext("application.xml");
-        Log log1 = (Log) ctx.getBean("feature1");
-        log1.log();
+        LogPoint logPoint1 = (LogPoint) ctx.getBean("feature1");
+        logPoint1.log();
     }
 }

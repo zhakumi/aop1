@@ -7,13 +7,13 @@ import org.aspectj.lang.annotation.*;
  * 切面  @Aspect 表明LogAspectJ 不仅仅是一个pojo还是一个切面
  */
 @Aspect
-public class LogAspectJ {
+public class LogAspect {
     //定义切点
-    @Pointcut("execution(* com.aop.Log.log(..))")
+    @Pointcut("execution(* com.aop.LogPoint.log(..))")
     public void log(){}
-    @Pointcut("execution(* com.aop.Log.throwLog(..))")
+    @Pointcut("execution(* com.aop.LogPoint.throwLog(..))")
     public void throwLog(){}
-    @Pointcut("execution(* com.aop.Log.around(..))")
+    @Pointcut("execution(* com.aop.LogPoint.around(..))")
     public void around(){}
 
     /**

@@ -1,9 +1,12 @@
 package com.aop;
 
-public class Feature1 implements Log {
+import org.springframework.stereotype.Service;
+
+@Service
+public class Feature1 implements LogPoint {
 
     public void log(){
-        System.out.println("f1");
+        System.out.println("f1 run");
     }
 
     public void throwLog() {

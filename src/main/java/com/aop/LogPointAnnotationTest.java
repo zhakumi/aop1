@@ -8,14 +8,15 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @ContextConfiguration(classes=AopConfiguration.class)
 @RunWith(SpringJUnit4ClassRunner.class)
-public class LogAnnotationTest {
+public class LogPointAnnotationTest {
     @Autowired
-    private  Log feature3;
+    private LogPoint feature3;
 
     @Test
     public void log(){
         feature3.log();
     }
+
     @Test
     public void throwLog() throws Exception{
         feature3.throwLog();

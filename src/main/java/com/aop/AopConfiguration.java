@@ -10,7 +10,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 @ComponentScan
 public class AopConfiguration {
     @Bean
-    public LogAspectJ logAspectJ(){
-        return  new  LogAspectJ();
+    public LogAspect logAspect(){
+        return  new LogAspect();
     }
 }
