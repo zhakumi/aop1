@@ -2,13 +2,15 @@ package com.aop;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
+import org.springframework.stereotype.Component;
 
 /**
  * 切面  @Aspect 表明LogAspectJ 不仅仅是一个pojo还是一个切面
  */
 @Aspect
+@Component
 public class LogAspect {
-    //定义切点
+    //定义切点 execution(<访问修饰符>?<返回类型><方法名>(<参数>)<异常>)
     @Pointcut("execution(* com.aop.LogPoint.log(..))")
     public void log(){}
     @Pointcut("execution(* com.aop.LogPoint.throwLog(..))")
@@ -25,7 +27,7 @@ public class LogAspect {
     }
 
     /**
-     * 后置
+     * 后置 最终
      */
     @After("log()")
     public void after(){

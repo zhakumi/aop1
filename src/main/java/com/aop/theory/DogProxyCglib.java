@@ -29,10 +29,20 @@ public class DogProxyCglib implements MethodInterceptor {
     }
 
 
-    public Object intercept(Object o, Method method, Object[] objects, MethodProxy methodProxy) throws Throwable {
+    /**
+     * 方法拦截
+     * @param proxy
+     * @param method
+     * @param objects
+     * @param methodProxy
+     * @return
+     * @throws Throwable
+     */
+    public Object intercept(Object proxy, Method method, Object[] objects, MethodProxy methodProxy) throws Throwable {
         System.out.println("事物开始");
-        methodProxy.invokeSuper(o, objects);
+        methodProxy.invokeSuper(proxy, objects);
         System.out.println("事物结束");
+        LogUtils.log();
         return null;
     }
 
